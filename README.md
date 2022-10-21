@@ -1,11 +1,35 @@
 # ros_template_creator
-## python_node.py
+## install
 
 ```
-python python_node.py xyz
+cd ~/
+git clone https://github.com/hoshianaaa/ros_template_creator.git
 ```
 
-output `xyz.py` following code
+add following code in `~/.bashrc`
+
+```
+python_node ()
+{
+  python3 ~/ros_template_creator/python_node.py $@       
+}
+
+launch_template ()
+{
+  python3 ~/ros_template_creator/launch_template.py $@
+}
+```
+
+
+
+## commands
+### python_node
+
+```
+python_node aaa
+```
+
+output following code in aaa.py
 
 ```python:xyz.py
 #!/usr/bin/env python
@@ -27,4 +51,24 @@ while not rospy.is_shutdown():
   pub.publish(Float64(0))
   r.sleep()
 
+```
+
+### launch_template
+
+```
+launch_template aaa
+```
+
+output following code in aaa.launch
+
+```
+<?xml version="1.0"?>
+
+<launch>
+
+  <!--include file="$(find xxx)/launch/xxx.launch"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="log"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="screen"/-->
+
+</launch>
 ```
