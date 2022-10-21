@@ -4,14 +4,15 @@ arg1 = args[1]
 
 path = None
 node_name = None
+extension = ".py"
 
-if (".py" in arg1):
+if (extension in arg1):
   split_string = arg1.split(".")
   node_name = split_string[0]
   path = arg1
 else:
   node_name = arg1
-  path = arg1 + ".py"
+  path = arg1 + extension
 
 string1 = '#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node("'
 

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!--include file="$(find xxx)/launch/xxx.launch"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="log"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="screen"/-->
+
+</launch>
+
