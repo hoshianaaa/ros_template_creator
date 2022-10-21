@@ -61,7 +61,7 @@ launch_template aaa
 
 output following code in aaa.launch
 
-```
+```xml:aaa.luanch
 <?xml version="1.0"?>
 
 <launch>
