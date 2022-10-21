@@ -5,7 +5,7 @@ arg1 = args[1]
 path = None
 node_name = None
 
-if (arg1 in "."):
+if (".py" in arg1):
   split_string = arg1.split(".")
   node_name = split_string[0]
   path = arg1
