@@ -5,7 +5,7 @@
 python python_node.py xyz
 ```
 
-output xyz.py following code
+output `xyz.py` following code
 
 ```python:xyz.py
 #!/usr/bin/env python
