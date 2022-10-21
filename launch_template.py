@@ -14,7 +14,7 @@ else:
   node_name = arg1
   path = arg1 + extension
 
-data = open("templates/template.launch", "r")
+data = open("~/ros_template_creator/templates/template.launch", "r")
 string = data.read()
 
 with open(path, 'a') as f:
