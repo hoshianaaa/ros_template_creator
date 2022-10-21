@@ -12,6 +12,7 @@ output `xyz.py` following code
 
 import rospy
 from std_msgs.msg import *
+from geometry_msgs.msg import *
 
 def callback(msg):
   print(msg.data)
@@ -25,4 +26,5 @@ r = rospy.Rate(10)
 while not rospy.is_shutdown():
   pub.publish(Float64(0))
   r.sleep()
+
 ```
