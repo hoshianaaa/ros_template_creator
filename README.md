@@ -29,7 +29,7 @@ launch_template ()
 python_node aaa
 ```
 
-output following code in aaa.py
+- output `aaa.py`
 
 ```python:xyz.py
 #!/usr/bin/env python
@@ -59,7 +59,7 @@ while not rospy.is_shutdown():
 launch_template aaa
 ```
 
-output following code in aaa.launch
+- output `aaa.launch`
 
 ```xml:aaa.luanch
 <?xml version="1.0"?>
