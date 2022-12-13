@@ -33,7 +33,7 @@ def initialize_file():
 def update_file():
   global param
   global f_name
-  write_json_file(f_name, initial_param)
+  write_json_file(f_name, param)
 ###########################################
 
 def callback(msg):
