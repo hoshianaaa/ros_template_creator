@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <roslaunch>
 
+  <!--include file="$(find xxx)/launch/xxx.launch"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="log"/-->
+  <!--node pkg="xxx" type ="xxx" name="xxx" output="screen"/-->
+
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find PACKAGE_NAME)/config/SETTING.rviz"/>
 
 </roslaunch>
