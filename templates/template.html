@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+  <div>x:
+    <input id="input1" type="number" step="0.001" oninput="change_input1()"/>
+  </div>
+  <input id="slider1" type="range" value="50" min="-0.5" max="0.5" step="0.001" oninput="change_slider();"/>
+
+  <button title="button" type="button" id="btn">button</button>
+
+<script src="./build/roslib.js"></script>
+
+<script>
+
+  // ros *****************************
+    
+  var ros = new ROSLIB.Ros();
+
+  ros.connect('ws://0.0.0.0:9090');
+
+  var pub = new ROSLIB.Topic({
+    ros : ros,
+    name : 'browser/data',
+    //messageType : 'geometry_msgs/Twist'
+    messageType : 'std_msgs/String'
+  });
+
+  var msg = new ROSLIB.Message({
+    data: ""
+  });
+
+  // *********************************
+
+  let button = document.getElementById('btn');
+
+  button.addEventListener('click', function(event){
+      data = 123.456;
+      msg.data = String(data);
+      pub.publish(msg);
+
+  });
+
+  var listener = new ROSLIB.Topic({
+    ros : ros,
+    name : '/backend/state',
+    messageType : 'std_msgs/String'
+  });
+
+  // Then we add a callback to be called every time a message is published on this topic.
+  listener.subscribe(function(message) {
+
+    console.log(message);
+
+  });
+ 
+</script>
+
+</body>
+</html>
