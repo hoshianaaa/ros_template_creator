@@ -1,4 +1,5 @@
 import sys
+import os
 args = sys.argv
 arg1 = args[1]
 
@@ -22,3 +23,5 @@ string = string1 + node_name + string2
 
 with open(path, 'a') as f:
   print(string, file=f)
+
+os.system("sudo -A chmod +x " + path)
