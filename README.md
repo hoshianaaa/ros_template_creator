@@ -31,7 +31,7 @@ python_node aaa
 
 - output `aaa.py`
 
-```python:xyz.py
+```python:aaa.py
 #!/usr/bin/env python
 
 import rospy
@@ -41,7 +41,7 @@ from geometry_msgs.msg import *
 def callback(msg):
   print(msg.data)
 
-rospy.init_node("xyz")
+rospy.init_node("aaa")
 pub = rospy.Publisher("~data", Float64, queue_size=10)
 rospy.Subscriber("~data", Float64, callback)
 
