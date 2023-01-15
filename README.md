@@ -73,11 +73,13 @@ launch_template aaa
 </launch>
 ```
 
-### プログラムを文字列に変換する方法
+### Convert files to Strings
+
+- how to do
 
 https://qiita.com/hoshianaaa/items/8c6172c1a872494ecd5d
 
-- ツール(`Converting files to Strings`)
+- Tools (`Converting files to Strings`)
 
 https://www.espruino.com/File+Converter
 
