@@ -31,7 +31,7 @@ python_node aaa
 
 - output `aaa.py`
 
-```python:xyz.py
+```python:aaa.py
 #!/usr/bin/env python
 
 import rospy
@@ -41,7 +41,7 @@ from geometry_msgs.msg import *
 def callback(msg):
   print(msg.data)
 
-rospy.init_node("xyz")
+rospy.init_node("aaa")
 pub = rospy.Publisher("~data", Float64, queue_size=10)
 rospy.Subscriber("~data", Float64, callback)
 
@@ -73,11 +73,13 @@ launch_template aaa
 </launch>
 ```
 
-### プログラムを文字列に変換する方法
+### Convert files to Strings
+
+- how to do
 
 https://qiita.com/hoshianaaa/items/8c6172c1a872494ecd5d
 
-- ツール(`Converting files to Strings`)
+- Tools (`Converting files to Strings`)
 
 https://www.espruino.com/File+Converter
 
