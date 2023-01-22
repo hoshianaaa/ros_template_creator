@@ -15,7 +15,7 @@ else:
   node_name = arg1
   path = arg1 + extension
 
-string1 = '#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\ndef now():\n  return rospy.get_time() # get (/s) ex.0.3\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node("'
+string1 = '#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\ndef now():\n  return rospy.get_time()\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node("'
 
 string2 = '")\npub = rospy.Publisher("~data", Float64, queue_size=10)\nrospy.Subscriber("~data", Float64, callback)\n\nr = rospy.Rate(10)\n\nwhile not rospy.is_shutdown():\n  pub.publish(Float64(0))\n  r.sleep()'
 
