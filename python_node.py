@@ -36,3 +36,8 @@ with open(path, 'a') as f:
   print(string, file=f)
 
 os.system("sudo -A chmod +x " + path)
+if isdir("python_ros_utils") is False:
+  bash_cmd("git clone git@github.com:hoshianaaa/python_ros_utils.git")
+
+if isdir("python_utils") is False:
+  bash_cmd("git clone git@github.com:hoshianaaa/python_utils.git")
