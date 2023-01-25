@@ -82,6 +82,7 @@ while not rospy.is_shutdown():
 '''
 - example run command
 rosrun scripts aaa.py _pub:=aaa _sub:=aaa
+'''
 ```
 
 ### launch_template
