@@ -1,11 +1,11 @@
 import sys
 import os
 
+import sys
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), './python_utils'))
 
-# https://softhints.com/python-change-directory-parent/
-def getud_name():
-  return os.path.abspath(os.curdir).split("/")[-2]
+from python_utils import *
 
 args = sys.argv
 arg1 = args[1]
