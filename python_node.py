@@ -22,7 +22,7 @@ else:
   node_name = arg1
   path = arg1 + extension
 
-string1 = '#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node(\"'
+string1 = "#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\nimport os,sys\nsys.path.append(os.path.join(os.path.dirname(__file__), './python_utils'))\nsys.path.append(os.path.join(os.path.dirname(__file__), './python_ros_utils'))\n\nfrom python_utils import *\nfrom python_ros_utils import *\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node(\""
 
 string2 = "\")\nstart= now()\nlast = now()\n\npub_topic_name = rospy.get_param(\"~pub\", \"data\")\nsub_topic_name = rospy.get_param(\"~sub\", \"data\")\n\nprint(\"pub:\",pub_topic_name)\nprint(\"sub:\",sub_topic_name)\n\npub = rospy.Publisher(pub_topic_name, Float64, queue_size=10)\nrospy.Subscriber(sub_topic_name, Float64, callback)\n\nr = rospy.Rate(10)\n\nwhile not rospy.is_shutdown():\n  pub.publish(Float64(0))\n  r.sleep()\n\n'''\n- example run command\nrosrun "
 
