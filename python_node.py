@@ -5,7 +5,7 @@ import os
 
 # https://softhints.com/python-change-directory-parent/
 def getud_name():
-  return os.path.abspath(os.curdir)
+  return os.path.abspath(os.curdir).split("/")[-2]
 
 args = sys.argv
 arg1 = args[1]
@@ -24,7 +24,7 @@ else:
 
 string1 = '#!/usr/bin/env python\n\nimport rospy\nfrom std_msgs.msg import *\nfrom geometry_msgs.msg import *\n\n# start diff\ndef sd():\n  global start\n  return now() - start # ex: 0.1 (0.1s)\n\n# last diff\ndef ld():\n  global last\n  n = now()\n  diff = n - last\n  last = n\n  return diff\n\ndef now():\n  return rospy.get_time()\n\ndef callback(msg):\n  print(msg.data)\n\nrospy.init_node(\"'
 
-string2 = "\")\nstart= now()\nlast = now()\n\npub_topic_name = rospy.get_param(\"~pub\", \"data\")\nsub_topic_name = rospy.get_param(\"~sub\", \"data\")\n\npub = rospy.Publisher(pub_topic_name, Float64, queue_size=10)\nrospy.Subscriber(sub_topic_name, Float64, callback)\n\nr = rospy.Rate(10)\n\nwhile not rospy.is_shutdown():\n  pub.publish(Float64(0))\n  print(\"sd:\",sd())\n  print(\"ld:\",ld())\n  r.sleep()\n\n'''\n- example run command\nrosrun "
+string2 = "\")\nstart= now()\nlast = now()\n\npub_topic_name = rospy.get_param(\"~pub\", \"data\")\nsub_topic_name = rospy.get_param(\"~sub\", \"data\")\n\nprint(\"pub:\",pub_topic_name)\nprint(\"sub:\",sub_topic_name)\n\npub = rospy.Publisher(pub_topic_name, Float64, queue_size=10)\nrospy.Subscriber(sub_topic_name, Float64, callback)\n\nr = rospy.Rate(10)\n\nwhile not rospy.is_shutdown():\n  pub.publish(Float64(0))\n  print(\"sd:\",sd())\n  print(\"ld:\",ld())\n  r.sleep()\n\n'''\n- example run command\nrosrun "
 
 string3 = ".py _pub:=aaa _sub:=aaa\n'''\n"
 
