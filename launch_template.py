@@ -1,6 +1,11 @@
 import sys
 import os
 
+sys.path.append(os.path.join(os.path.dirname(__file__), './python_utils'))
+
+from python_utils import *
+
+
 args = sys.argv
 arg1 = args[1]
 
@@ -20,4 +25,6 @@ data = open( os.environ['HOME'] + "/ros_template_creator/templates/template.laun
 string = data.read()
 
 with open(path, 'a') as f:
+  pkg_name = getud_name()
+  string = string.replace("pkg_name",pkg_name)
   print(string, file=f)
