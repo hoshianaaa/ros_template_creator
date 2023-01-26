@@ -3,8 +3,12 @@
 <launch>
 
   <!--include file="$(find pkg_name)/launch/xxx.launch"/-->
-  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="log"/-->
-  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="screen"/-->
+  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="log"-->
+    <!--param name="xxx" value="xxx"/-->
+  <!--/node-->
+  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="screen"-->
+    <!--param name="xxx" value="xxx"/-->
+  <!--/node-->
 
   <!--node pkg="rviz" type="rviz" name="rviz" args="-d $(find PACKAGE_NAME)/config/SETTING.rviz"/-->
 
