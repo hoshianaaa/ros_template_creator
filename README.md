@@ -98,9 +98,9 @@ launch_template aaa
 
 <launch>
 
-  <!--include file="$(find xxx)/launch/xxx.launch"/-->
-  <!--node pkg="xxx" type ="xxx" name="xxx" output="log"/-->
-  <!--node pkg="xxx" type ="xxx" name="xxx" output="screen"/-->
+  <!--include file="$(find pkg_name)/launch/xxx.launch"/-->
+  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="log"/-->
+  <!--node pkg="pkg_name" type ="xxx" name="xxx" output="screen"/-->
 
 </launch>
 ```
